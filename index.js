@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 // Imports dependencies and set up http server
 const
   express = require('express'),
@@ -52,7 +54,7 @@ app.get('/webhook', (req, res) => {
       // Checks the mode and token sent is correct
       if (mode === 'subscribe' && token === VERIFY_TOKEN) {
         
-        // Responds with the challenge token from the request
+      // Responds with the challenge token from the request
         console.log('WEBHOOK_VERIFIED ' + challenge);
         res.status(200).send(challenge);
       
